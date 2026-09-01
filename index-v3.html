@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浜松野球教室比較 | 月謝・コーチ・練習環境で選ぶ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F1210;
+    --ink-soft: #34382F;
+    --red: #D1352B;
+    --red-deep: #A82720;
+    --ivory: #F2EFE6;
+    --paper: #FAF9F5;
+    --grey: #8A8D82;
+    --line: rgba(15, 18, 16, 0.12);
+    --line-on-dark: rgba(242, 239, 230, 0.16);
+
+    --gradient: linear-gradient(135deg, #D1352B 0%, #E8672C 55%, #F2A93C 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(209,53,43,0.12) 0%, rgba(242,169,60,0.12) 100%);
+
+    --shadow-sm: 0 2px 10px rgba(15, 18, 16, 0.08);
+    --shadow-md: 0 10px 28px rgba(15, 18, 16, 0.14);
+    --shadow-lg: 0 20px 48px rgba(15, 18, 16, 0.2);
+    --shadow-red: 0 10px 26px rgba(209, 53, 43, 0.32);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .jp-display {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+  }
+
+  .num-display {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* -------- Header -------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 900;
+    font-size: 1.02rem;
+  }
+  .logo .tag {
+    background: var(--gradient);
+    color: var(--paper);
+    font-size: 0.65rem;
+    padding: 3px 7px;
+    font-weight: 700;
+    box-shadow: var(--shadow-red);
+  }
+
+  nav { display: flex; gap: 30px; font-size: 0.86rem; font-weight: 700; }
+  nav a { color: var(--ink); text-decoration: none; position: relative; }
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 3px;
+    background: var(--red);
+    transition: width 0.2s;
+  }
+  nav a:hover::after { width: 100%; }
+
+  @media (max-width: 680px) { nav { display: none; } }
+
+  /* -------- Hero -------- */
+  .hero {
+    background:
+      radial-gradient(ellipse 700px 500px at 88% 8%, rgba(232, 103, 44, 0.22), transparent 60%),
+      radial-gradient(ellipse 500px 400px at 8% 90%, rgba(209, 53, 43, 0.16), transparent 60%),
+      var(--ink);
+    color: var(--ivory);
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    padding-bottom: 60px;
+  }
+
+  .hero-inner {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 72px 24px 40px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .hero-inner { grid-template-columns: 1fr; }
+  }
+
+  .hero-text .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 20px;
+  }
+  .hero-text .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 3px;
+    background: var(--gradient);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.3rem, 5.4vw, 3.5rem);
+    line-height: 1.28;
+  }
+  .hero h1 .accent {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero .lede {
+    margin-top: 24px;
+    max-width: 40ch;
+    font-size: 1rem;
+    color: rgba(242, 239, 230, 0.78);
+  }
+
+  .cta-row { display: flex; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 28px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .btn-primary {
+    background: var(--gradient);
+    color: var(--paper);
+    box-shadow: var(--shadow-red);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(209, 53, 43, 0.4); }
+  .btn-ghost {
+    border: 2px solid rgba(242, 239, 230, 0.35);
+    color: var(--ivory);
+    backdrop-filter: blur(2px);
+  }
+  .btn-ghost:hover { border-color: var(--ivory); transform: translateY(-2px); }
+
+  .hero-figure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-figure .big-num {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(7rem, 16vw, 11rem);
+    line-height: 1;
+    background: linear-gradient(160deg, rgba(242,239,230,0.55) 0%, rgba(232,103,44,0.4) 55%, rgba(209,53,43,0.35) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 12px 30px rgba(209, 53, 43, 0.18));
+  }
+
+  .hero-figure .cap {
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    text-align: right;
+    font-size: 0.78rem;
+    color: rgba(242, 239, 230, 0.65);
+    font-weight: 700;
+  }
+
+  .hero-stats {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0;
+    margin-top: 56px;
+    border-top: 1px solid var(--line-on-dark);
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding: 22px 20px 0;
+    border-right: 1px solid var(--line-on-dark);
+  }
+  .hero-stat:last-child { border-right: none; }
+
+  .hero-stat .n {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.7rem;
+    color: var(--paper);
+  }
+  .hero-stat .l {
+    font-size: 0.74rem;
+    color: rgba(242, 239, 230, 0.6);
+    margin-top: 4px;
+  }
+
+  @media (max-width: 680px) {
+    .hero-stats { flex-wrap: wrap; }
+    .hero-stat { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--line-on-dark); padding-bottom: 16px; }
+  }
+
+  /* -------- Section shared -------- */
+  section { padding: 84px 0; }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+  }
+
+  .section-head .kicker {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 10px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-head h2 { font-size: 1.7rem; }
+  .section-head p { font-size: 0.88rem; color: var(--ink-soft); max-width: 40ch; }
+
+  /* -------- Featured cards -------- */
+  .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 860px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .school-card {
+    background: var(--paper);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+  }
+  .school-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+  .school-card .rank-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--gradient);
+    color: var(--paper);
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    padding: 8px 16px 6px;
+    box-shadow: var(--shadow-sm);
+    border-radius: 0 0 6px 0;
+  }
+
+  .school-card .photo {
+    height: 140px;
+    background:
+      repeating-linear-gradient(135deg, #E4E1D6 0px, #E4E1D6 22px, #DAD6C8 22px, #DAD6C8 44px);
+  }
+
+  .school-card .body { padding: 26px 24px 28px; flex: 1; display: flex; flex-direction: column; }
+
+  .school-card .area {
+    font-size: 0.74rem;
+    color: var(--red-deep);
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .school-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .school-card .desc { font-size: 0.84rem; color: var(--ink-soft); margin-bottom: 20px; }
+
+  .statline {
+    display: flex;
+    margin-top: auto;
+    padding-top: 16px;
+    position: relative;
+  }
+  .statline::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 2px;
+    background: var(--gradient);
+  }
+  .statline div { flex: 1; }
+  .statline .n { font-family: 'Anton', sans-serif; font-size: 1.3rem; color: var(--ink); }
+  .statline .l { font-size: 0.66rem; color: var(--grey); margin-top: 3px; }
+
+  /* -------- Area grid -------- */
+  .area-section { background: var(--ink); color: var(--ivory); }
+  .area-section .section-head p { color: rgba(242, 239, 230, 0.65); }
+  .area-section .section-head h2 { color: var(--ivory); }
+
+  .area-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 720px) { .area-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .area-cell {
+    background: #171A17;
+    padding: 28px 22px;
+    text-decoration: none;
+    color: var(--ivory);
+    border-radius: 6px;
+    border: 1px solid var(--line-on-dark);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .area-cell:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.35);
+    border-color: rgba(232, 103, 44, 0.4);
+  }
+  .area-cell .name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; font-size: 1.05rem; }
+  .area-cell .count {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.78rem;
+    margin-top: 8px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* -------- Filter chips -------- */
+  .chip-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 720px) { .chip-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .chip {
+    background: var(--paper);
+    padding: 22px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, color 0.18s ease, background 0.18s ease;
+  }
+  .chip:hover {
+    background: var(--gradient);
+    color: var(--paper);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-red);
+  }
+  .chip .arrow { font-weight: 900; }
+
+  /* -------- Guide -------- */
+  .guide { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 860px) { .guide { grid-template-columns: 1fr; } }
+
+  .guide-item {
+    background: var(--paper);
+    padding: 32px 28px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .guide-item:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+  .guide-item .num {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .guide-item h3 { font-size: 1.02rem; margin-bottom: 12px; line-height: 1.5; }
+  .guide-item p { font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* -------- Footer -------- */
+  footer { background: var(--ink); color: rgba(242, 239, 230, 0.7); padding: 52px 24px 32px; }
+  .footer-inner { max-width: 1120px; margin: 0 auto; }
+  .footer-inner .logo { color: var(--ivory); margin-bottom: 16px; }
+  footer p { font-size: 0.8rem; max-width: 50ch; margin-bottom: 28px; }
+  footer .bottom { font-size: 0.72rem; color: rgba(242, 239, 230, 0.4); border-top: 1px solid var(--line-on-dark); padding-top: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span>浜松野球教室比較</span>
+      <span class="tag">GUIDE</span>
+    </div>
+    <nav>
+      <a href="#featured">注目の教室</a>
+      <a href="#area">エリアから探す</a>
+      <a href="#filter">目的から探す</a>
+      <a href="#guide">選び方</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow">HAMAMATSU BASEBALL SCHOOL GUIDE</span>
+      <h1>何を比べれば、<br>後悔しない<span class="accent">？</span></h1>
+      <p class="lede">
+        月謝、コーチの実績、練習環境。同じ「野球教室」でも中身はまったく違う。
+        浜松市内の教室をひとつずつ調べて、迷わず選べる形にしました。
+      </p>
+      <div class="cta-row">
+        <a href="#area" class="btn btn-primary">エリアで探す</a>
+        <a href="#filter" class="btn btn-ghost">目的で探す</a>
+      </div>
+    </div>
+    <div class="hero-figure">
+      <div class="big-num">18</div>
+      <div class="cap">SCHOOLS<br>掲載教室数</div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">18</div><div class="l">掲載教室数</div></div>
+      <div class="hero-stat"><div class="n">7</div><div class="l">対応エリア</div></div>
+      <div class="hero-stat"><div class="n">¥5K+</div><div class="l">月謝の目安幅</div></div>
+      <div class="hero-stat"><div class="n">2026</div><div class="l">最終更新</div></div>
+    </div>
+  </div>
+</div>
+
+<section id="featured">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">FEATURED</span>
+        <h2>今月の注目3教室</h2>
+      </div>
+      <p>体験レッスンの評判、コーチの指導実績、続けやすさで選びました。</p>
+    </div>
+    <div class="card-grid">
+
+      <div class="school-card">
+        <span class="rank-tag">01</span>
+        <div class="photo"></div>
+        <div class="body">
+          <div class="area">中央区 · 浜松駅から車で10分</div>
+          <h3>四ツ池ベースボールアカデミー</h3>
+          <p class="desc">元プロコーチによる少人数指導。基礎からフォーム改善まで一人ひとりに向き合う体制。</p>
+          <div class="statline">
+            <div><div class="n">¥9,800</div><div class="l">月謝(週1)</div></div>
+            <div><div class="n">6-15</div><div class="l">対象年齢</div></div>
+            <div><div class="n">少人数</div><div class="l">指導形態</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <span class="rank-tag">02</span>
+        <div class="photo"></div>
+        <div class="body">
+          <div class="area">東区 · 笠井エリア</div>
+          <h3>浜松イーグルスジュニア教室</h3>
+          <p class="desc">少年野球のゆるやかな入口として人気。礼儀・挨拶を重視した指導方針。</p>
+          <div class="statline">
+            <div><div class="n">¥6,000</div><div class="l">月謝(週1)</div></div>
+            <div><div class="n">5-12</div><div class="l">対象年齢</div></div>
+            <div><div class="n">グループ</div><div class="l">指導形態</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="school-card">
+        <span class="rank-tag">03</span>
+        <div class="photo"></div>
+        <div class="body">
+          <div class="area">葵西エリア</div>
+          <h3>ケイスポーツベースボールアカデミー</h3>
+          <p class="desc">週2回の頻度で技術向上を狙う中〜上級者向けカリキュラム。</p>
+          <div class="statline">
+            <div><div class="n">¥11,000</div><div class="l">月謝(週2)</div></div>
+            <div><div class="n">8-15</div><div class="l">対象年齢</div></div>
+            <div><div class="n">少人数</div><div class="l">指導形態</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="area" class="area-section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">BY AREA</span>
+        <h2>エリアから探す</h2>
+      </div>
+      <p>送り迎えのしやすさは継続の鍵。まずはお住まいの区から。</p>
+    </div>
+    <div class="area-grid">
+      <a href="#" class="area-cell"><div class="name">中央区</div><div class="count">6教室</div></a>
+      <a href="#" class="area-cell"><div class="name">東区</div><div class="count">4教室</div></a>
+      <a href="#" class="area-cell"><div class="name">西区</div><div class="count">3教室</div></a>
+      <a href="#" class="area-cell"><div class="name">南区</div><div class="count">2教室</div></a>
+      <a href="#" class="area-cell"><div class="name">北区</div><div class="count">3教室</div></a>
+      <a href="#" class="area-cell"><div class="name">浜北区</div><div class="count">3教室</div></a>
+      <a href="#" class="area-cell"><div class="name">天竜区</div><div class="count">1教室</div></a>
+      <a href="#" class="area-cell"><div class="name">すべて見る</div><div class="count">18教室</div></a>
+    </div>
+  </div>
+</section>
+
+<section id="filter">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">BY PURPOSE</span>
+        <h2>目的から探す</h2>
+      </div>
+      <p>「何を優先したいか」で見え方は変わります。</p>
+    </div>
+    <div class="chip-grid">
+      <a href="#" class="chip">初心者向け<span class="arrow">→</span></a>
+      <a href="#" class="chip">マンツーマン指導<span class="arrow">→</span></a>
+      <a href="#" class="chip">月謝が安い<span class="arrow">→</span></a>
+      <a href="#" class="chip">女の子も歓迎<span class="arrow">→</span></a>
+      <a href="#" class="chip">元プロコーチ在籍<span class="arrow">→</span></a>
+      <a href="#" class="chip">送迎バスあり<span class="arrow">→</span></a>
+      <a href="#" class="chip">中学生向け<span class="arrow">→</span></a>
+      <a href="#" class="chip">体験レッスン無料<span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="guide" style="background: var(--ivory);">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">HOW TO CHOOSE</span>
+        <h2>野球教室の選び方</h2>
+      </div>
+      <p>比較する前に知っておきたい3つの視点。</p>
+    </div>
+    <div class="guide">
+      <div class="guide-item">
+        <div class="num">01</div>
+        <h3>少年野球とスクールの違いを理解する</h3>
+        <p>少年野球はボランティア指導・月謝は安いが親の負担が大きい。スクールはプロ指導・月謝は高めだが送迎以外の負担が少ない。目的に合わせて選ぶことが大切です。</p>
+      </div>
+      <div class="guide-item">
+        <div class="num">02</div>
+        <h3>コーチの経歴を確認する</h3>
+        <p>元プロ・大学野球経験者・体育系資格保有者など、指導者の背景によって教え方の深さが変わります。体験レッスンで直接話すのが一番確実です。</p>
+      </div>
+      <div class="guide-item">
+        <div class="num">03</div>
+        <h3>続けやすさで判断する</h3>
+        <p>月謝の安さだけで選ぶと、送迎の負担や練習頻度のミスマッチで続かないことも。通いやすさも比較軸に入れましょう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="logo"><span>浜松野球教室比較</span></div>
+    <p>浜松市内の野球教室・少年野球スクールを、月謝・コーチの実績・練習環境で比較しています。掲載をご希望の教室様はお問い合わせください。</p>
+    <div class="bottom">© 2026 浜松野球教室比較. 掲載情報は各教室の公式情報を基に作成しています。</div>
+  </div>
+</footer>
+
+</body>
+</html>
