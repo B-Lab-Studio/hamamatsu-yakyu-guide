@@ -37,6 +37,7 @@
     background: var(--paper);
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, .jp-display { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
@@ -121,6 +122,9 @@
   .hero-quickstats div:last-child { border-right: none; }
   .hero-quickstats .n { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: var(--paper); }
   .hero-quickstats .l { font-size: 0.72rem; color: rgba(242, 239, 230, 0.6); margin-top: 4px; }
+  @media (max-width: 480px) {
+    .hero-quickstats div { min-width: 42%; }
+  }
 
   /* -------- Body layout -------- */
   .layout {
