@@ -278,6 +278,22 @@
   .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
   @media (max-width: 860px) { .card-grid { grid-template-columns: 1fr; } }
 
+  /* -------- Other schools list -------- */
+  .other-schools { background: var(--ivory); padding: 64px 0; }
+  .other-list { display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .other-row {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    background: var(--paper); border-radius: 8px; padding: 18px 22px;
+    box-shadow: var(--shadow-sm); text-decoration: none; color: var(--ink);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  a.other-row:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .other-row .name { font-weight: 700; font-size: 0.94rem; }
+  .other-row .meta { font-size: 0.78rem; color: var(--ink-soft); margin-top: 3px; }
+  .other-row .price { font-family: 'Anton', sans-serif; font-size: 1.05rem; white-space: nowrap; }
+  .other-row.reference { cursor: default; }
+  .reference-note { margin-top: 20px; font-size: 0.76rem; color: var(--grey); line-height: 1.7; }
+
   .school-card {
     background: var(--paper);
     display: flex;
@@ -463,13 +479,13 @@
       </div>
     </div>
     <div class="hero-figure">
-      <div class="big-num">18</div>
+      <div class="big-num">9</div>
       <div class="cap">SCHOOLS<br>掲載教室数</div>
     </div>
 
     <div class="hero-stats">
-      <div class="hero-stat"><div class="n">18</div><div class="l">掲載教室数</div></div>
-      <div class="hero-stat"><div class="n">7</div><div class="l">対応エリア</div></div>
+      <div class="hero-stat"><div class="n">9</div><div class="l">掲載教室数</div></div>
+      <div class="hero-stat"><div class="n">2</div><div class="l">対応エリア</div></div>
       <div class="hero-stat"><div class="n">¥5K+</div><div class="l">月謝の目安幅</div></div>
       <div class="hero-stat"><div class="n">2026</div><div class="l">最終更新</div></div>
     </div>
@@ -536,6 +552,56 @@
   </div>
 </section>
 
+<section class="other-schools">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="kicker">MORE SCHOOLS</span>
+        <h2>その他の掲載教室</h2>
+      </div>
+      <p>民間・フランチャイズ型の教室に加え、地域の少年野球団も参考情報として掲載しています。</p>
+    </div>
+    <div class="other-list">
+      <a href="lions.html" class="other-row">
+        <div>
+          <div class="name">LIONS BASEBALL SCHOOL可美</div>
+          <div class="meta">中央区可美エリア · 西武ライオンズ公認 · 幼児-小学生</div>
+        </div>
+        <div class="price">¥9,900</div>
+      </a>
+      <div class="other-row reference">
+        <div>
+          <div class="name">浜松ブラッツ(泉小学校)</div>
+          <div class="meta">少年野球団(ボランティア運営) · 参考情報</div>
+        </div>
+        <div class="price">-</div>
+      </div>
+      <div class="other-row reference">
+        <div>
+          <div class="name">浜北ブラザーズ(天竜川太平運動公園)</div>
+          <div class="meta">少年野球団(ボランティア運営) · 参考情報</div>
+        </div>
+        <div class="price">-</div>
+      </div>
+      <div class="other-row reference">
+        <div>
+          <div class="name">浜松フューチャーズ(白脇小学校)</div>
+          <div class="meta">少年野球団(ボランティア運営) · 参考情報</div>
+        </div>
+        <div class="price">-</div>
+      </div>
+      <div class="other-row reference">
+        <div>
+          <div class="name">浜松リトルリーグ</div>
+          <div class="meta">硬式少年野球チーム(ボランティア運営) · 浜松・磐田・袋井対象</div>
+        </div>
+        <div class="price">¥4,000〜</div>
+      </div>
+    </div>
+    <p class="reference-note">※少年野球団は保護者・地域による運営が中心のため、詳細ページは掲載しておりません。料金・活動日など詳しくは各団体へ直接お問い合わせください。</p>
+  </div>
+</section>
+
 <section id="area" class="area-section">
   <div class="wrap">
     <div class="section-head">
@@ -543,17 +609,17 @@
         <span class="kicker">BY AREA</span>
         <h2>エリアから探す</h2>
       </div>
-      <p>送り迎えのしやすさは継続の鍵。まずはお住まいの区から。</p>
+      <p>送り迎えのしやすさは継続の鍵。まずはお住まいの区から(掲載準備中のエリアもあります)。</p>
     </div>
     <div class="area-grid">
-      <a href="#" class="area-cell"><div class="name">中央区</div><div class="count">6教室</div></a>
-      <a href="#" class="area-cell"><div class="name">東区</div><div class="count">4教室</div></a>
-      <a href="#" class="area-cell"><div class="name">西区</div><div class="count">3教室</div></a>
-      <a href="#" class="area-cell"><div class="name">南区</div><div class="count">2教室</div></a>
-      <a href="#" class="area-cell"><div class="name">北区</div><div class="count">3教室</div></a>
-      <a href="#" class="area-cell"><div class="name">浜北区</div><div class="count">3教室</div></a>
-      <a href="#" class="area-cell"><div class="name">天竜区</div><div class="count">1教室</div></a>
-      <a href="#" class="area-cell"><div class="name">すべて見る</div><div class="count">18教室</div></a>
+      <a href="#" class="area-cell"><div class="name">中央区</div><div class="count">3教室</div></a>
+      <a href="#" class="area-cell"><div class="name">浜北区</div><div class="count">1教室</div></a>
+      <a href="#" class="area-cell"><div class="name">東区</div><div class="count">準備中</div></a>
+      <a href="#" class="area-cell"><div class="name">西区</div><div class="count">準備中</div></a>
+      <a href="#" class="area-cell"><div class="name">南区</div><div class="count">準備中</div></a>
+      <a href="#" class="area-cell"><div class="name">北区</div><div class="count">準備中</div></a>
+      <a href="#" class="area-cell"><div class="name">天竜区</div><div class="count">準備中</div></a>
+      <a href="index.html#featured" class="area-cell"><div class="name">すべて見る</div><div class="count">4教室</div></a>
     </div>
   </div>
 </section>
