@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>野武士(ヤシキBBC)浜北塾 | 浜松野球教室比較</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0F1210;
+    --ink-soft: #34382F;
+    --red: #D1352B;
+    --red-deep: #A82720;
+    --ivory: #F2EFE6;
+    --paper: #FAF9F5;
+    --grey: #8A8D82;
+    --line: rgba(15, 18, 16, 0.12);
+    --line-on-dark: rgba(242, 239, 230, 0.16);
+
+    --gradient: linear-gradient(135deg, #D1352B 0%, #E8672C 55%, #F2A93C 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(209,53,43,0.10) 0%, rgba(242,169,60,0.10) 100%);
+
+    --shadow-sm: 0 2px 10px rgba(15, 18, 16, 0.08);
+    --shadow-md: 0 10px 28px rgba(15, 18, 16, 0.14);
+    --shadow-lg: 0 20px 48px rgba(15, 18, 16, 0.2);
+    --shadow-red: 0 10px 26px rgba(209, 53, 43, 0.32);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .jp-display { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+  .num-display { font-family: 'Anton', sans-serif; font-weight: 400; }
+
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .wrap-narrow { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+  a { color: inherit; }
+
+  /* -------- Header -------- */
+  header {
+    position: sticky; top: 0; z-index: 30;
+    background: var(--paper);
+    border-bottom: 3px solid var(--ink);
+    box-shadow: var(--shadow-sm);
+  }
+  .header-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .logo { display: flex; align-items: baseline; gap: 8px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.02rem; text-decoration: none; color: var(--ink); }
+  .logo .tag { background: var(--gradient); color: var(--paper); font-size: 0.65rem; padding: 3px 7px; font-weight: 700; box-shadow: var(--shadow-red); }
+  nav { display: flex; gap: 30px; font-size: 0.86rem; font-weight: 700; }
+  nav a { text-decoration: none; }
+  @media (max-width: 680px) { nav { display: none; } }
+
+  /* -------- Breadcrumb -------- */
+  .breadcrumb {
+    padding: 18px 0;
+    font-size: 0.78rem;
+    color: var(--grey);
+  }
+  .breadcrumb a { text-decoration: none; color: var(--grey); }
+  .breadcrumb a:hover { color: var(--red); }
+  .breadcrumb span { margin: 0 8px; }
+
+  /* -------- School hero -------- */
+  .school-hero {
+    background:
+      radial-gradient(ellipse 600px 400px at 92% 0%, rgba(232, 103, 44, 0.18), transparent 60%),
+      var(--ink);
+    color: var(--ivory);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    padding: 48px 0 56px;
+  }
+
+  .rank-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gradient);
+    color: var(--paper);
+    font-family: 'Anton', sans-serif;
+    font-size: 0.82rem;
+    padding: 6px 14px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-red);
+    margin-bottom: 20px;
+  }
+
+  .school-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.35;
+    max-width: 18ch;
+  }
+
+  .school-hero .area-line {
+    margin-top: 14px;
+    font-size: 0.92rem;
+    color: rgba(242, 239, 230, 0.75);
+  }
+
+  .hero-quickstats {
+    display: flex;
+    gap: 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--line-on-dark);
+    flex-wrap: wrap;
+  }
+  .hero-quickstats div { flex: 1; padding: 20px 20px 0; border-right: 1px solid var(--line-on-dark); min-width: 130px; }
+  .hero-quickstats div:last-child { border-right: none; }
+  .hero-quickstats .n { font-family: 'Anton', sans-serif; font-size: 1.5rem; color: var(--paper); }
+  .hero-quickstats .l { font-size: 0.72rem; color: rgba(242, 239, 230, 0.6); margin-top: 4px; }
+  @media (max-width: 480px) {
+    .hero-quickstats div { min-width: 42%; }
+  }
+
+  /* -------- Body layout -------- */
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    padding: 56px 0 80px;
+  }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+
+  .main-col section { margin-bottom: 52px; }
+
+  .kicker {
+    font-family: 'Anton', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 10px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .main-col h2 { font-size: 1.4rem; margin-bottom: 18px; }
+  .main-col p { font-size: 0.92rem; color: var(--ink-soft); }
+
+  /* Gallery */
+  .gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 10px; }
+  .gallery div {
+    border-radius: 6px;
+    height: 160px;
+    background: repeating-linear-gradient(135deg, #E4E1D6 0px, #E4E1D6 22px, #DAD6C8 22px, #DAD6C8 44px);
+    box-shadow: var(--shadow-sm);
+  }
+  .gallery .g1 { height: 330px; grid-row: span 2; }
+  @media (max-width: 600px) {
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery .g1 { grid-row: span 1; height: 160px; }
+  }
+
+  /* Pricing table */
+  .price-table { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .price-table th, .price-table td { padding: 16px 18px; text-align: left; font-size: 0.86rem; border-bottom: 1px solid var(--line); }
+  .price-table th { background: var(--ink); color: var(--ivory); font-weight: 700; font-size: 0.78rem; }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table td.price { font-family: 'Anton', sans-serif; font-size: 1.1rem; }
+  .price-table tr.highlight td { background: var(--gradient-soft); }
+
+  /* Coach card */
+  .coach-card {
+    display: flex;
+    gap: 20px;
+    background: var(--paper);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 24px;
+    align-items: flex-start;
+  }
+  .coach-photo {
+    width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0;
+    background: repeating-linear-gradient(135deg, #E4E1D6 0px, #E4E1D6 12px, #DAD6C8 12px, #DAD6C8 24px);
+  }
+  .coach-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+  .coach-card .role {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--red-deep);
+    background: var(--gradient-soft);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .coach-card p { font-size: 0.85rem; color: var(--ink-soft); }
+
+  /* Feature list */
+  .feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .feature-list { grid-template-columns: 1fr; } }
+  .feature-item {
+    background: var(--paper);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 20px 22px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .feature-item .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--gradient);
+    margin-top: 5px;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-red);
+  }
+  .feature-item h4 { font-size: 0.9rem; margin-bottom: 4px; }
+  .feature-item p { font-size: 0.82rem; color: var(--ink-soft); }
+
+  /* Access */
+  .access-map {
+    height: 220px;
+    border-radius: 8px;
+    background: repeating-linear-gradient(45deg, #E4E1D6 0px, #E4E1D6 16px, #DAD6C8 16px, #DAD6C8 32px);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    color: var(--grey);
+  }
+  .access-list { list-style: none; }
+  .access-list li {
+    display: flex; justify-content: space-between;
+    padding: 12px 0; border-bottom: 1px solid var(--line);
+    font-size: 0.86rem;
+  }
+  .access-list li span:first-child { color: var(--grey); }
+  .access-list li:last-child { border-bottom: none; }
+
+  /* FAQ */
+  .faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+  .faq-item h4 { font-size: 0.92rem; margin-bottom: 8px; display: flex; gap: 10px; }
+  .faq-item h4 .q { color: var(--red); font-family: 'Anton', sans-serif; }
+  .faq-item p { font-size: 0.85rem; color: var(--ink-soft); padding-left: 24px; }
+
+  /* -------- Sidebar -------- */
+  .sidebar { position: sticky; top: 96px; align-self: start; display: flex; flex-direction: column; gap: 20px; }
+
+  .cta-card {
+    background: var(--ink);
+    color: var(--ivory);
+    border-radius: 10px;
+    padding: 28px 24px;
+    box-shadow: var(--shadow-lg);
+  }
+  .cta-card h3 { font-size: 1.05rem; margin-bottom: 10px; line-height: 1.5; }
+  .cta-card p { font-size: 0.8rem; color: rgba(242, 239, 230, 0.7); margin-bottom: 20px; }
+  .cta-btn {
+    display: block;
+    text-align: center;
+    background: var(--gradient);
+    color: var(--paper);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: var(--shadow-red);
+    transition: transform 0.18s ease;
+  }
+  .cta-btn:hover { transform: translateY(-2px); }
+
+  .info-card {
+    background: var(--paper);
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .info-card h4 { font-size: 0.85rem; margin-bottom: 14px; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; }
+  .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.82rem; }
+  .info-row:last-child { border-bottom: none; }
+  .info-row span:first-child { color: var(--grey); }
+  .info-row span:last-child { font-weight: 700; text-align: right; }
+
+  /* -------- Related schools -------- */
+  .related { background: var(--ivory); padding: 72px 0; }
+  .related .section-head { margin-bottom: 36px; }
+  .related h2 { font-size: 1.4rem; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 860px) { .related-grid { grid-template-columns: 1fr; } }
+  .related-card {
+    background: var(--paper);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    padding: 22px;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+  .related-card .area { font-size: 0.72rem; color: var(--red-deep); font-weight: 700; margin-bottom: 8px; }
+  .related-card h3 { font-size: 0.98rem; margin-bottom: 10px; }
+  .related-card .price { font-family: 'Anton', sans-serif; font-size: 1.15rem; }
+
+  /* -------- Footer -------- */
+  footer { background: var(--ink); color: rgba(242, 239, 230, 0.7); padding: 52px 24px 32px; }
+  .footer-inner { max-width: 1120px; margin: 0 auto; }
+  .footer-inner .logo { color: var(--ivory); margin-bottom: 16px; }
+  footer p { font-size: 0.8rem; max-width: 50ch; margin-bottom: 28px; }
+  footer .bottom { font-size: 0.72rem; color: rgba(242, 239, 230, 0.4); border-top: 1px solid var(--line-on-dark); padding-top: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo"><span>浜松野球教室比較</span><span class="tag">GUIDE</span></a>
+    <nav>
+      <a href="#">注目の教室</a>
+      <a href="#">エリアから探す</a>
+      <a href="#">目的から探す</a>
+      <a href="#">選び方</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="breadcrumb">
+    <a href="index.html">トップ</a><span>/</span><a href="index.html">浜北区の野球教室</a><span>/</span>野武士(ヤシキBBC)浜北塾
+  </div>
+</div>
+
+<div class="school-hero">
+  <div class="wrap">
+    <span class="rank-pill">浜北区 総合1位</span>
+    <h1>野武士(ヤシキBBC)浜北塾</h1>
+    <p class="area-line">静岡県浜松市浜北区小林 · 小畑興業リノベーション工業団地内</p>
+
+    <div class="hero-quickstats">
+      <div><div class="n">¥8,000</div><div class="l">月謝(週1・小学生)</div></div>
+      <div><div class="n">未就学-中学生</div><div class="l">対象年齢</div></div>
+      <div><div class="n">小集団</div><div class="l">指導形態</div></div>
+      <div><div class="n">週1(月4回)</div><div class="l">練習頻度</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <div class="main-col">
+
+    <section>
+      <span class="kicker">GALLERY</span>
+      <div class="gallery">
+        <div class="g1"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <section>
+      <span class="kicker">ABOUT</span>
+      <h2>教室の特徴</h2>
+      <p>
+        野武士(ヤシキBBC)浜北塾は、元プロ野球選手・スカウトの北村照文氏が顧問を務める野球塾です。
+        主宰者は静岡県内で約20年、高校野球の指導者を務めた実績を持ち、浜松商・浜松工など県内強豪校への指導実績があります。
+        1時間の小集団指導に加え、30分のトレーニングを組み合わせたカリキュラムで、未就学児から中学生まで幅広く指導しています。
+      </p>
+    </section>
+
+    <section>
+      <span class="kicker">FEATURES</span>
+      <h2>選ばれる理由</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="dot"></div>
+          <div><h4>元プロ野球選手が顧問</h4><p>元プロ野球選手・スカウトの北村照文氏が顧問を務めています。</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="dot"></div>
+          <div><h4>高校野球指導20年の実績</h4><p>主宰者は県内強豪校への指導実績を持つベテラン指導者。</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="dot"></div>
+          <div><h4>未経験者にも対応</h4><p>未就学児コースは未経験対応で、初めての野球にも安心。</p></div>
+        </div>
+        <div class="feature-item">
+          <div class="dot"></div>
+          <div><h4>小集団指導+トレーニング</h4><p>1時間の指導に加え30分のトレーニングで基礎体力も養います。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="kicker">PRICING</span>
+      <h2>コース・料金</h2>
+      <table class="price-table">
+        <tr><th>コース</th><th>頻度</th><th>月謝</th><th>対象</th></tr>
+        <tr class="highlight"><td>未就学児</td><td>週1(月4回)</td><td class="price">¥6,000</td><td>未就学児</td></tr>
+        <tr><td>小学生</td><td>週1(月4回)</td><td class="price">¥8,000</td><td>小学生</td></tr>
+        <tr><td>中学生</td><td>週1(月4回)</td><td class="price">¥9,000</td><td>中学生</td></tr>
+      </table>
+      <p style="margin-top: 14px; font-size: 0.78rem; color: var(--grey);">※別途、施設使用料2,000円/月が必要です。入会金10,000円(スポーツ保険・Tシャツ代等)。野球・ソフトボールも応相談。</p>
+    </section>
+
+    <section>
+      <span class="kicker">COACH</span>
+      <h2>コーチ紹介</h2>
+      <div class="coach-card">
+        <div class="coach-photo"></div>
+        <div>
+          <h3>北村 照文 氏(顧問)</h3>
+          <span class="role">元プロ野球選手・スカウト</span>
+          <p>県をまたぐ移動が可能になった際には浜松にも訪問し、直接指導する予定です。主宰者は静岡県内で約20年、高校野球の指導者を務め、浜松商・浜松工・浜松学院など多数の強豪校を指導した実績があります。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <span class="kicker">ACCESS</span>
+      <h2>アクセス</h2>
+      <div class="access-map">MAP PLACEHOLDER</div>
+      <ul class="access-list">
+        <li><span>会場</span><span>小畑興業 リノベーション工業団地01番(浜松市浜北区小林285)</span></li>
+        <li><span>曜日</span><span>月・木</span></li>
+        <li><span>時間</span><span>16:30〜21:00</span></li>
+        <li><span>連絡先</span><span>yashikibbc-nobushi@yahoo.co.jp / 090-7439-7114</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="kicker">FAQ</span>
+      <h2>よくある質問</h2>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span>未経験でも参加できますか？</h4>
+        <p>未就学児コースは未経験対応です。小学生・中学生も個々のレベルに合わせて指導します。</p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span>ソフトボールでも参加できますか？</h4>
+        <p>野球・ソフトボールいずれも応相談です。詳細はお問い合わせください。</p>
+      </div>
+      <div class="faq-item">
+        <h4><span class="q">Q.</span>掛川塾との違いは？</h4>
+        <p>同じ主宰者が掛川塾も運営していますが、浜北塾は小畑興業内で月・木開催、内容は集団指導+トレーニングです。</p>
+      </div>
+    </section>
+
+  </div>
+
+  <aside class="sidebar">
+    <div class="cta-card">
+      <h3>無料体験レッスンに申し込む</h3>
+      <p>入会前に、教室の雰囲気とコーチの指導を体験できます。</p>
+      <a href="#" class="cta-btn">体験レッスンを予約する</a>
+    </div>
+    <div class="info-card">
+      <h4>基本情報</h4>
+      <div class="info-row"><span>月謝</span><span>¥6,000〜9,000</span></div>
+      <div class="info-row"><span>入会金</span><span>¥10,000</span></div>
+      <div class="info-row"><span>施設使用料</span><span>¥2,000/月</span></div>
+      <div class="info-row"><span>対象年齢</span><span>未就学児〜中学生</span></div>
+      <div class="info-row"><span>開催日</span><span>月・木</span></div>
+    </div>
+  </aside>
+</div>
+
+<div class="related">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">RELATED</span>
+      <h2>他の教室も見る</h2>
+    </div>
+    <div class="related-grid">
+      <a href="yotsuike.html" class="related-card">
+        <div class="area">中央区萩丘</div>
+        <h3>四ツ池Baseball Lab.</h3>
+        <div class="price">要問合せ</div>
+      </a>
+      <a href="ksports.html" class="related-card">
+        <div class="area">中央区葵西</div>
+        <h3>ケイスポーツベースボールアカデミー</h3>
+        <div class="price">¥7,150〜</div>
+      </a>
+      <a href="index.html" class="related-card">
+        <div class="area">浜松市内</div>
+        <h3>他の教室も見る</h3>
+        <div class="price">一覧へ</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="logo"><span>浜松野球教室比較</span></div>
+    <p>浜松市内の野球教室・少年野球スクールを、月謝・コーチの実績・練習環境で比較しています。掲載をご希望の教室様はお問い合わせください。</p>
+    <div class="bottom">© 2026 浜松野球教室比較. 掲載情報は各教室の公式情報を基に作成しています。</div>
+  </div>
+</footer>
+
+</body>
+</html>
