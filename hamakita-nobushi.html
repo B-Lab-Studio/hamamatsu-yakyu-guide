@@ -153,22 +153,24 @@
   .main-col p { font-size: 0.92rem; color: var(--ink-soft); }
 
   /* Gallery */
-  .gallery { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 10px; }
-  .gallery div {
-    border-radius: 6px;
-    height: 160px;
-    background: repeating-linear-gradient(135deg, #E4E1D6 0px, #E4E1D6 22px, #DAD6C8 22px, #DAD6C8 44px);
-    box-shadow: var(--shadow-sm);
+  .gallery-pending {
+    border-radius: 8px;
+    padding: 48px 24px;
+    text-align: center;
+    background: var(--ivory);
+    border: 1.5px dashed var(--line);
   }
-  .gallery .g1 { height: 330px; grid-row: span 2; }
-  @media (max-width: 600px) {
-    .gallery { grid-template-columns: 1fr 1fr; }
-    .gallery .g1 { grid-row: span 1; height: 160px; }
-  }
+  .gallery-pending .icon { font-size: 1.8rem; margin-bottom: 10px; opacity: 0.5; }
+  .gallery-pending p { font-size: 0.82rem; color: var(--grey); }
 
   /* Pricing table */
-  .price-table { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-sm); }
-  .price-table th, .price-table td { padding: 16px 18px; text-align: left; font-size: 0.86rem; border-bottom: 1px solid var(--line); }
+  .price-table-wrap { border-radius: 8px; box-shadow: var(--shadow-sm); overflow: hidden; }
+  .price-table { width: 100%; border-collapse: collapse; background: var(--paper); table-layout: fixed; }
+  .price-table th, .price-table td { padding: 16px 18px; text-align: left; font-size: 0.86rem; border-bottom: 1px solid var(--line); word-break: break-word; }
+  @media (max-width: 600px) {
+    .price-table th, .price-table td { padding: 10px 8px; font-size: 0.72rem; }
+    .price-table td.price { font-size: 0.85rem; }
+  }
   .price-table th { background: var(--ink); color: var(--ivory); font-weight: 700; font-size: 0.78rem; }
   .price-table tr:last-child td { border-bottom: none; }
   .price-table td.price { font-family: 'Anton', sans-serif; font-size: 1.1rem; }
@@ -227,15 +229,12 @@
   .access-map {
     height: 220px;
     border-radius: 8px;
-    background: repeating-linear-gradient(45deg, #E4E1D6 0px, #E4E1D6 16px, #DAD6C8 16px, #DAD6C8 32px);
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
     margin-bottom: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.78rem;
-    color: var(--grey);
+    border: none;
   }
+  .access-map iframe { width: 100%; height: 100%; border: 0; display: block; }
   .access-list { list-style: none; }
   .access-list li {
     display: flex; justify-content: space-between;
@@ -253,6 +252,7 @@
 
   /* -------- Sidebar -------- */
   .sidebar { position: sticky; top: 96px; align-self: start; display: flex; flex-direction: column; gap: 20px; }
+  @media (max-width: 900px) { .sidebar { position: static; } }
 
   .cta-card {
     background: var(--ink);
@@ -359,12 +359,9 @@
 
     <section>
       <span class="kicker">GALLERY</span>
-      <div class="gallery">
-        <div class="g1"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div class="gallery-pending">
+        <div class="icon">📷</div>
+        <p>写真は準備中です。掲載可能な写真がございましたらお問い合わせください。</p>
       </div>
     </section>
 
@@ -404,12 +401,14 @@
     <section>
       <span class="kicker">PRICING</span>
       <h2>コース・料金</h2>
+      <div class="price-table-wrap">
       <table class="price-table">
         <tr><th>コース</th><th>頻度</th><th>月謝</th><th>対象</th></tr>
         <tr class="highlight"><td>未就学児</td><td>週1(月4回)</td><td class="price">¥6,000</td><td>未就学児</td></tr>
         <tr><td>小学生</td><td>週1(月4回)</td><td class="price">¥8,000</td><td>小学生</td></tr>
         <tr><td>中学生</td><td>週1(月4回)</td><td class="price">¥9,000</td><td>中学生</td></tr>
       </table>
+      </div>
       <p style="margin-top: 14px; font-size: 0.78rem; color: var(--grey);">※別途、施設使用料2,000円/月が必要です。入会金10,000円(スポーツ保険・Tシャツ代等)。野球・ソフトボールも応相談。</p>
     </section>
 
@@ -429,7 +428,7 @@
     <section>
       <span class="kicker">ACCESS</span>
       <h2>アクセス</h2>
-      <div class="access-map">MAP PLACEHOLDER</div>
+      <div class="access-map"><iframe src="https://www.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E6%B5%9C%E6%9D%BE%E5%B8%82%E6%B5%9C%E5%8C%97%E5%8C%BA%E5%B0%8F%E6%9E%97285&output=embed" loading="lazy"></iframe></div>
       <ul class="access-list">
         <li><span>会場</span><span>小畑興業 リノベーション工業団地01番(浜松市浜北区小林285)</span></li>
         <li><span>曜日</span><span>月・木</span></li>
