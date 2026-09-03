@@ -300,6 +300,47 @@
   .type-badge.hard { background: #FDEAE3; color: #B8452F; }
   .type-badge.soft { background: #E8EEF9; color: #34589E; }
 
+  .soft-teams-toggle { margin-top: 16px; }
+  .soft-teams-toggle summary {
+    cursor: pointer;
+    list-style: none;
+    background: var(--paper);
+    border-radius: 8px;
+    padding: 16px 22px;
+    box-shadow: var(--shadow-sm);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .soft-teams-toggle summary::-webkit-details-marker { display: none; }
+  .soft-teams-toggle summary::before {
+    content: '▸';
+    display: inline-block;
+    margin-right: 8px;
+    color: var(--red);
+    transition: transform 0.15s ease;
+  }
+  .soft-teams-toggle[open] summary::before { transform: rotate(90deg); }
+  .soft-team-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+    padding: 18px;
+    background: var(--paper);
+    border-radius: 8px;
+  }
+  .soft-team-chip {
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+  }
+
   .school-card {
     background: var(--paper);
     display: flex;
@@ -589,71 +630,38 @@
         </div>
         <div class="price">-</div>
       </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松イーグルス(笠井小学校)<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球チーム(ボランティア運営) · 東区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松ミッドウイングス(曳馬小学校)<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 中央区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松蒲野球スポーツ少年団(蒲小学校)<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 東区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">雄踏野球スポーツ少年団<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 西区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松フューチャーズ野球スポーツ少年団(白脇小学校)<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 南区 · 小1-6年生</div>
-        </div>
-        <div class="price">¥3,000</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松ホークス少年野球団<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 南区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜松ブラッツ少年野球団<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 北区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">細江野球スポーツ少年団<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 北区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
-      <div class="other-row reference">
-        <div>
-          <div class="name">浜北ブラザーズ(天竜川太平運動公園)<span class="type-badge soft">軟式</span></div>
-          <div class="meta">少年野球団(ボランティア運営) · 浜北区</div>
-        </div>
-        <div class="price">-</div>
-      </div>
     </div>
-    <p class="reference-note">※少年野球団は保護者・地域による運営が中心のため、詳細ページは掲載しておりません。料金・活動日など詳しくは各団体へ直接お問い合わせください。</p>
+
+    <details class="soft-teams-toggle">
+      <summary>軟式少年野球団を見る(23件)<span class="type-badge soft">軟式</span></summary>
+      <div class="soft-team-chips">
+        <span class="soft-team-chip">浜松イーグルス(笠井小学校) · 東区</span>
+        <span class="soft-team-chip">浜松ミッドウイングス(曳馬小学校) · 中央区</span>
+        <span class="soft-team-chip">浜松蒲野球スポーツ少年団(蒲小学校) · 東区</span>
+        <span class="soft-team-chip">雄踏野球スポーツ少年団 · 西区</span>
+        <span class="soft-team-chip">浜松フューチャーズ野球スポーツ少年団(白脇小学校) · 南区 · 月¥3,000</span>
+        <span class="soft-team-chip">浜松ホークス少年野球団 · 南区</span>
+        <span class="soft-team-chip">浜松ブラッツ少年野球団 · 北区</span>
+        <span class="soft-team-chip">細江野球スポーツ少年団 · 北区</span>
+        <span class="soft-team-chip">浜北ブラザーズ(天竜川太平運動公園) · 浜北区</span>
+        <span class="soft-team-chip">浜松エンジェルス</span>
+        <span class="soft-team-chip">浜松ガッツ少年野球団</span>
+        <span class="soft-team-chip">小池ビーバーズ</span>
+        <span class="soft-team-chip">都田リバース · 北区</span>
+        <span class="soft-team-chip">浜松ヤンキース</span>
+        <span class="soft-team-chip">浜松浅間スポーツ少年団</span>
+        <span class="soft-team-chip">浜松レッドサンダーズ · 南区</span>
+        <span class="soft-team-chip">浜松ファイターズ</span>
+        <span class="soft-team-chip">河輪セブン少年野球団 · 南区</span>
+        <span class="soft-team-chip">篠原グリーンズ · 西区</span>
+        <span class="soft-team-chip">浜松コンドルズ</span>
+        <span class="soft-team-chip">可美ストレングス · 南区</span>
+        <span class="soft-team-chip">浜松ドリームアローズ</span>
+        <span class="soft-team-chip">浜松ドジャース</span>
+      </div>
+    </details>
+
+    <p class="reference-note">※少年野球団は保護者・地域による運営が中心のため、詳細ページは掲載しておりません。料金・活動日など詳しくは各団体へ直接お問い合わせください。掲載チームは全日本学童軟式野球大会 兼 浜松市スポーツ少年団本部長杯の参加チームを参考にしています。</p>
   </div>
 </section>
 
